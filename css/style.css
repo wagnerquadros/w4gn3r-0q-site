@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cores principais */
+    --cor-acido: #e5ff20;
+    --cor-rosa: #ff3c80;
+    --cor-roxo: #3911f3;
+    --cor-ciano: #5cebf1;
+    --cor-laranja: #ff7628;
+
+    /* Cores neutras */
+    --cor-preto: #0b0a0e;
+    --cor-papel: #f5f0e8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.faixa-anuncio {
+    background-color: var(--cor-preto);
+    color: white;
+}
+
+.cabecalho-pricipal {
+    background-color: var(--cor-acido);
+}
+
+.secao-destaque {
+    background-color: var(--cor-acido);
+}
+
+.capa-animada {
+    background-color: var(--cor-roxo);
+}
+
+.secao-dados {
+    background-color: var(--cor-papel);
+}
+
+.secao-faixas {
+    background-color: var(--cor-preto);
+    color: var(--cor-papel);
+}
+
+.secao-manifesto {
+    background-color: var(--cor-laranja);
+}
+
+.secao-redes {
+    background-color: var(--cor-rosa);
+}
+
+.rodape {
+    background-color: var(--cor-preto);
+    color: var(--cor-papel);
+}
+
