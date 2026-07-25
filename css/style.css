@@ -412,7 +412,7 @@ body {
     border: 2px solid var(--cor-preto);
 
     font-family: monospace;
-    font-size: 0.5625rem;
+    font-size: 0.625rem;
     font-weight: 900;
 
     transform: rotate(-5deg);
@@ -484,4 +484,162 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+
+/*=========== Seção Dados ==================*/
+.secao-dados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*A unidade fr representa uma fração do espaço disponível.*/
+
+    background-color: var(--fundo-papel);
+    color: var(--texto-fundo-papel);
+
+    border-bottom: 3px solid var(--cor-preto);
+}
+
+.dado-lancamento {
+    padding: 30px 3vw;
+    border-right: 3px solid var(--cor-preto);
+}
+
+.dado-lancamento:last-child {
+    border-right: 0;
+}
+
+.dado-lancamento strong {
+    display: block;
+
+    font-size: clamp(44px, 6vw, 90px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+}
+
+.dado-lancamento span {
+    font-family: monospace;
+    font-size: 0.625rem;
+    font-weight: 900;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/*=========== Seção Faixas ==================*/
+.secao-faixas {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+
+    background-color: var(--cor-preto);
+    color: var(--cor-papel);
+
+    border-bottom: 3px solid var(--cor-preto);
+}
+
+.cabecalho-faixas {
+    padding: 7vw 3vw;
+
+    border-right: 1px solid rgb(255 255 255 / 20%);
+}
+
+.conteudo-cabecalho-faixas {
+    position: sticky;
+    top: 35px;
+}
+
+.titulo-faixas {
+    margin-top:  20px;
+
+    font-size:  clamp(60px, 9vw, 130px);
+    font-weight: 700;
+    line-height: 0.72;
+    letter-spacing: -0.09em;
+}
+
+.titulo-faixas em {
+    display: block;
+
+    color: var(--cor-ciano);
+    font-style: normal;
+
+    white-space: nowrap;
+}
+
+.lista-faixas {
+    min-width: 0;
+    padding: 5vw;
+
+    list-style: none; /*remove os numeros automaticos produzidos pelo <ol>*/
+}
+
+.faixa-musical {
+    display: grid;
+    grid-template-columns: 55px minmax(0, 1fr) auto;
+    align-items: center;
+
+    min-height: 145px;
+    border-bottom: 1px solid rgb(255 255 255 / 33%);
+
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+            padding-inline 0.25s ease,
+            background-color 0.25s ease,
+            color 0.25s ease;
+}
+
+.lista-faixas > li:first-child .faixa-musical {
+    border-top: 1px solid rgb(255 255 255 / 33%);
+}
+
+.numero-faixa {
+    font-family: monospace;
+    font-size: 0.6875rem;
+    font-weight: 900;
+}
+
+.faixa-musical h3 {
+    font-size: clamp(28px, 4vw, 57px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+}
+
+.faixa-musical time {
+    display: inline-flex;
+    align-items: center;
+
+    white-space: nowrap;
+
+    font-family: monospace;
+    font-size: 0.6875rem;
+    font-weight: 900;
+}
+
+.indicador-faixa {
+    display: inline-grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+    margin-left: 16px;
+
+    border: 1px solid currentColor;
+    border-radius: 50%;
+
+    vertical-align: middle;
+}
+
+.faixa-musical:hover,
+.faixa-musical:focus-visible {
+    padding-inline: 18px;
+
+    background-color: var(--fundo-rosa);
+    color: var(--texto-fundo-rosa);
+}
+
+.faixa-musical:focus-visible {
+    outline: 2px solid var(--cor-ciano);
+    outline-offset: 3px;
 }

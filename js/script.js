@@ -60,7 +60,7 @@ botaoCores.addEventListener("click", () => {
 
 areaCapaDestaque.addEventListener("pointermove", (evento) => {
 
-   //interrompo o movimento em telas menores que 801px
+   //interrompe movimento em telas menores que 801px
    if(window.innerWidth < 801) {
        return;
    }
