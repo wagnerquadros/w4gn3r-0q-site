@@ -15,6 +15,22 @@
     /* Cores neutras */
     --cor-preto: #0b0a0e;
     --cor-papel: #f5f0e8;
+
+    /* Fundos que participarão do rodízio */
+    --fundo-amarelo: var(--cor-acido);
+    --fundo-laranja: var(--cor-laranja);
+    --fundo-papel: var(--cor-papel);
+    --fundo-ciano: var(--cor-ciano);
+    --fundo-roxo: var(--cor-roxo);
+    --fundo-rosa: var(--cor-rosa);
+
+    /* Textos usados sobre cada fundo */
+    --texto-fundo-amarelo: var(--cor-preto);
+    --texto-fundo-laranja: var(--cor-preto);
+    --texto-fundo-papel: var(--cor-preto);
+    --texto-fundo-ciano: var(--cor-preto);
+    --texto-fundo-roxo: var(--cor-papel);
+    --texto-fundo-rosa: var(--cor-preto);
 }
 
 html {
@@ -22,11 +38,12 @@ html {
 }
 
 body {
-    background-color: var(--cor-acido);
-    color: var(--cor-preto);
+    background-color: var(--fundo-amarelo);
+    color: var(--texto-fundo-amarelo);
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/*=========== Faixa Superior animada ==================*/
 .faixa-anuncio {
     background-color: var(--cor-preto);
     color: var(--cor-papel);
@@ -64,4 +81,145 @@ body {
     to {
         transform: translateX(-50%);
     }
+}
+
+/*=========== Menu Principal ==================*/
+.cabecalho-principal {
+    display: flex;
+    align-items: center;  /*centraliza verticalmente*/
+    gap: 2rem;
+
+    padding:  18px 3vw;
+
+    background-color: var(--fundo-amarelo);
+    color: var(--texto-fundo-amarelo);
+    border-bottom: 3px solid var(--cor-preto); /* Borda/linha na parte inferior. */
+}
+
+.marca {
+    color: inherit; /*herda a cor do elemento superior*/
+    text-decoration: none; /*remove o sublinhado do link*/
+
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: -0.08em;
+
+    white-space: nowrap; /*impede que o nome seja quebrado*/
+}
+
+.marca sup {
+    color: var(--cor-rosa);
+    font-family: monospace;
+    font-size: 0.80rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    margin-left: 0.10rem;
+}
+
+.navegacao-principal {
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+
+    margin-left: auto;
+}
+
+.navegacao-principal a {
+    color: inherit;
+    text-decoration: none;
+
+    font-family:  monospace;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.navegacao-principal a:hover {
+    color: var(--cor-rosa);
+}
+
+.navegacao-principal a:focus-visible {
+    color: var(--cor-rosa);
+    outline: 2px solid var(--cor-preto);
+    outline-offset: 4px;
+}
+
+.botao-cores {
+    display: inline-flex;
+    align-items: center; /*centraliza verticalmente*/
+    justify-content: center; /*centraliza horizontalmente*/
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    border: 2px solid var(--cor-preto);
+    background-color: var(--fundo-papel);
+    color: var(--texto-fundo-papel);
+
+    font-family: monospace;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    box-shadow: 4px 4px 0 var(--cor-preto);
+    cursor: pointer;
+
+    /*Anima mudanças feitas pela propriedade transform durante 0.2 segundo*/
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao-cores::before {
+    content: "";
+
+    width: 19px;
+    height: 19px;
+    border: 2px solid var(--cor-preto);
+    border-radius: 50%;
+
+    /*Cria um gradiente que gira ao redor do centro, como uma pizza.*/
+    background: conic-gradient(
+            var(--fundo-amarelo) 0 16.66%,
+            var(--fundo-laranja) 16.66% 33.33%,
+            var(--fundo-papel) 33.33% 50%,
+            var(--fundo-ciano) 50% 66.66%,
+            var(--fundo-roxo) 66.66% 83.33%,
+            var(--fundo-rosa) 83.33% 100%
+    );
+}
+
+.icone-botao-cores {
+    display: inline-flex;
+    transition: transform 0.35s ease;
+}
+
+.botao-cores:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--cor-preto);
+}
+
+.botao-cores:hover .icone-botao-cores {
+    /*Anima o icone do botão cores.*/
+    transform: rotate(180deg);
+}
+
+.botao-cores:focus-visible {
+    /*Navegação pelo teclado utilizando TAB.*/
+    outline: 2px solid var(--cor-preto);
+    outline-offset: 3px;
+
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--cor-preto);
+}
+
+.botao-cores:focus-visible .icone-botao-cores {
+    transform: rotate(180deg);
+}
+
+.botao-cores.girando {
+    /*Anima o botão ao clicar.*/
+    transform: rotate(6deg) scale(0.94); /*Inclina e reduz o botão.*/
+    box-shadow: 1px 1px 0 var(--cor-preto);
+}
+
+.botao-mobile {
+    display: none;
 }

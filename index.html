@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
     <title>W4gn3R 0q — Tocando Umazinha</title>
 </head>
 <body>
@@ -17,23 +18,29 @@
     </aside>
 
     <header class="cabecalho-principal">
-        <h1 class="marca" >W4GN3R 0q</h1>
+        <a class="marca" href="#inicio">W4GN3R 0Q<sup>®</sup></a>
         <nav class="navegacao-principal">
             <a href="#disco">O DISCO</a>
             <a href="#faixas">FAIXAS</a>
             <a href="#redes">REDES</a>
             <a href="#ouvir">OUVIR</a>
         </nav>
-        <button class="botao-cores" type="button">Cores</button>
+        <button class="botao-cores" type="button">
+            <span class="texto-botao-cores">CORES</span>
+            <span class="icone-botao-cores" aria-hidden="true">↻</span>
+        </button>
         <button class="botao-mobile" type="button">Menu</button>
     </header>
 
-    <main>
+    <main id="inicio">
         <!-- Seção DESTAQUE ----------------------------------------------- -->
         <section class="secao-destaque" id="disco">
-            <div class="nome-album">
+            <div class="conteudo-destaque">
                 <span>LANÇAMENTO / 2023</span>
-                <h1>TOCANDO UMAZINHA</h1>
+                <h1>
+                    TOCANDO
+                    <span>UMAZINHA.</span>
+                </h1>
                 <p>W4GN3R 0Q APRESENTA</p>
                 <div class="texto-dar-o-play">
                     <p>Três faixas resgatadas do underground. Diretas, tortas e sem pedir licença.</p>
@@ -112,7 +119,7 @@
                 <a class="cartao-rede" href="https://www.youtube.com/@w4gn3r0q" target="_blank" rel="noopener noreferrer">
                     <span class="identificacao-rede">01 / VÍDEOS + SHORTS</span>
                     <strong>YOU<br>TUBE.</strong>
-                    <p>Clipes, áudios oficiais, registros e shorts.</p>
+                    <p>Clipes, áudios oficiais, registros e shorts.</p><span class="acao-rede">ABRIR CANAL ↗</span>
                 </a>
                 <a class="cartao-rede rede-instagram" href="https://www.instagram.com/w4gn3r_0q/" target="_blank" rel="noopener noreferrer">
                     <span class="identificacao-rede">02 / FOTOS + REELS</span>
