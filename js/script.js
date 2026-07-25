@@ -1,5 +1,7 @@
 const botaoCores = document.querySelector(".botao-cores");
 const raizPagina = document.documentElement;
+const areaCapaDestaque = document.querySelector(".area-capa-destaque");
+const molduraCapa = document.querySelector(".moldura-capa");
 
 const coresDoLayout = [
     "var(--cor-acido)",
@@ -56,3 +58,31 @@ botaoCores.addEventListener("click", () => {
     }, 220);
 });
 
+areaCapaDestaque.addEventListener("pointermove", (evento) => {
+
+   //interrompo o movimento em telas menores que 801px
+   if(window.innerWidth < 801) {
+       return;
+   }
+
+   const limitesArea = areaCapaDestaque.getBoundingClientRect();
+
+   const posicaoHorizontal =
+       (evento.clientX - limitesArea.left) / limitesArea.width - 0.5;
+
+   const posicaoVertical =
+       (evento.clientY - limitesArea.top) / limitesArea.height - 0.5;
+
+   const rotacao = 4 + posicaoHorizontal * 10;
+   const deslocamentoX = posicaoHorizontal * 20;
+   const deslocamentoY = posicaoVertical * 20;
+
+    molduraCapa.style.transform = `
+        rotate(${rotacao}deg)
+        translate(${deslocamentoX}px, ${deslocamentoY}px)
+    `;
+});
+
+areaCapaDestaque.addEventListener("pointerleave", () => {
+    molduraCapa.style.transform = "rotate(4deg)";
+});

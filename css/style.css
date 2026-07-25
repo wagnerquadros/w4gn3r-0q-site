@@ -223,3 +223,265 @@ body {
 .botao-mobile {
     display: none;
 }
+
+/*=========== Seção Destaque ==================*/
+.secao-destaque {
+    position: relative;
+
+    display: grid; /*Transforma a seção em um Grid com os filhos conteudo-destaque e capa-animada*/
+    grid-template-columns: 1.18fr 0.82fr; /*Cria duas colunas*/
+
+    min-height: calc(100vh - 90px);
+
+    border-bottom: 3px solid var(--cor-preto);
+}
+
+.conteudo-destaque {
+    position: relative;
+    z-index: 2;
+
+    padding: 4.5vw 3vw 3vw; /* superior:4.5vw | laterais: 3vw | inferior: 3vw*/
+    background-color: var(--fundo-amarelo);
+    color: var(--texto-fundo-amarelo);
+
+    border-right: 3px solid var(--cor-preto);
+
+    overflow: hidden;
+}
+
+.etiqueta {
+    display: inline-flex;
+
+    padding: 8px 12px;
+
+    background-color: var(--fundo-papel);
+    color: var(--texto-fundo-papel);
+
+    border: 2px solid var(--cor-preto);
+
+    font-family: monospace;
+    font-size: 0.625rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    transform: rotate(-2deg);
+}
+
+.titulo-principal {
+    position: relative;
+
+    margin-top: 2.5vw; /*distancia entre etiqueta e o titulo*/
+
+    font-size: clamp(68px, 12.5vw, 188px); /*(minimo, tamanha desejado, maximo)*/
+    font-weight: 900;
+    line-height: 0.7;
+    letter-spacing: -0.105em;
+}
+
+.palavra-destaque {
+    display: block; /*(faz o texto ocupar uma nova linha)*/
+
+    color: var(--cor-rosa);
+
+    -webkit-text-stroke: 3px var(--cor-preto); /*cria um contorno ao redor das letras*/
+    text-shadow: 8px 8px 0 var(--cor-ciano); /*cria a sombra (8px para a direita, 8px para baixo, 0 de desfoque, cor ciano) */
+
+    transform: translateX(5vw); /*desloca para a direita 5% da largura a tela*/
+}
+
+.assinatura-destaque {
+    margin-top: 2vw;
+    margin-left: 5px;
+
+    font-family: monospace;
+    font-size: clamp(12px, 1.3vw, 18px);
+    font-weight: 900;
+    letter-spacing: 0.25em;
+}
+
+.resumo-destaque {
+    display: flex;
+    align-items: flex-end; /*alinha os elementos pela parte inferior*/
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-top: 4.5vw;
+}
+
+.resumo-destaque p {
+    max-width: 440px;
+
+    font-size: clamp(18px, 2.1vw, 29px);
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.botao-escutar {
+    flex: 0 0 auto; /*não crescer, não diminuir, usar tamanho original*/
+
+    display: inline-grid;
+    place-items: center;
+
+    width: 132px;
+    height: 132px;
+
+    background-color: var(--fundo-rosa);
+    color: var(--texto-fundo-rosa);
+
+    border: 3px solid var(--cor-preto);
+    border-radius: 50%;
+
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+
+    transform: rotate(7deg);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.botao-escutar:hover,
+.botao-escutar:focus-visible {
+    background-color: var(--fundo-papel);
+    color: var(--texto-fundo-papel);
+
+    transform: rotate(-6deg) scale(1.08);
+}
+
+.botao-escutar:focus-visible {
+    outline: 3px solid var(--cor-preto);
+    outline-offset: 4px;
+}
+
+.area-capa-destaque {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    padding: 4.5vw 3vw;
+
+    background-color: var(--fundo-roxo);
+    color: var(--texto-fundo-roxo);
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.moldura-capa {
+    position: relative;
+
+    width: min(30vw, 430px);
+    aspect-ratio: 1;
+
+    border: 4px solid var(--cor-preto);
+    background-color: var(--cor-preto);
+
+    box-shadow: 18px 19px 0 var(--cor-ciano);
+
+    transform: rotate(4deg);
+    transition: transform 0.25s ease;
+
+    will-change: transform;
+}
+
+.moldura-capa img { /*Faz a imagem ocupar o tamanho da moldura*/
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.selo-explicito {
+    position: absolute;
+    top: 22px;
+    left: 20px;
+
+    padding: 7px;
+
+    background-color: var(--fundo-papel);
+    color: var(--texto-fundo-papel);
+
+    border: 2px solid var(--cor-preto);
+
+    font-family: monospace;
+    font-size: 0.5625rem;
+    font-weight: 900;
+
+    transform: rotate(-5deg);
+}
+
+.adesivo-lancamento {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+
+    display: grid;
+    place-items: center;
+
+    width: 108px;
+    height: 108px;
+    padding: 8px;
+
+    background-color: var(--fundo-amarelo);
+    color: var(--texto-fundo-amarelo);
+
+    border: 3px solid var(--cor-preto);
+    border-radius: 50%;
+
+    font-family: monospace;
+    font-size: 0.625rem;
+    font-weight: 900;
+    line-height: 1.25;
+
+    text-align: center;
+    text-decoration: none;
+
+    transform: rotate(-9deg);
+
+}
+
+.circulo-giratorio {
+    position: absolute;
+    z-index: -1; /* coloca o circulo atras da capa */
+
+    width: min(35vw, 490px);
+    aspect-ratio: 1;
+    border: 2px dashed var(--cor-ciano);
+    border-radius: 50%;
+
+    animation: girar-circulo 18s linear infinite;
+}
+
+.circulo-giratorio::before,
+.circulo-giratorio::after {
+    content: "";
+
+    position: absolute;
+    inset: 10%;
+
+    border: 1px solid var(--cor-rosa);
+    border-radius: 50%;
+}
+
+.circulo-giratorio::after {
+    inset: 22%;
+    border-color: var(--cor-acido);
+}
+
+@keyframes girar-circulo {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
