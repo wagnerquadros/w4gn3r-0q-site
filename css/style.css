@@ -94,6 +94,10 @@ body {
     background-color: var(--fundo-amarelo);
     color: var(--texto-fundo-amarelo);
     border-bottom: 3px solid var(--cor-preto); /* Borda/linha na parte inferior. */
+
+    /*Responsivo*/
+    position: relative;
+    z-index: 10;
 }
 
 .marca {
@@ -222,6 +226,18 @@ body {
 
 .botao-mobile {
     display: none;
+
+    padding: 8px 10px;
+
+    background-color: transparent;
+    color: inherit;
+
+    border: 2px solid var(--cor-preto);
+
+    font-family: monospace;
+    font-weight: 900;
+
+    cursor: pointer;
 }
 
 /*=========== Seção Destaque ==================*/
@@ -1011,4 +1027,374 @@ body {
 .links-plataformas a:focus-visible {
     outline: 2px solid var(--cor-ciano);
     outline-offset: 4px;
+}
+
+/*=========== Responsividade ==================*/
+@media (max-width: 800px) {
+    .navegacao-principal {
+        display: none;
+    }
+
+    .botao-mobile {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navegacao-principal.aberta {
+        position: absolute;
+        top: 100%;
+        right: 3vw;
+
+        display: flex;
+        flex-direction: column;
+        align-items:  flex-start;
+        gap: 20px;
+
+        min-width: 190px;
+        margin-left: 0;
+        padding: 22px;
+
+        background-color: var(--fundo-papel);
+        color: var(--texto-fundo-papel);
+
+        border: 2px solid var(--cor-preto);
+        box-shadow: 6px 6px 0 var(--cor-preto);
+
+    }
+
+    .secao-destaque {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudo-destaque {
+        border-right: 0;
+        border-bottom: 3px solid var(--cor-preto);
+    }
+
+    .area-capa-destaque {
+        min-height: 650px;
+    }
+
+    .moldura-capa {
+        width: min(74vw, 430px);
+    }
+
+    .circulo-giratorio {
+        width: 95vw;
+    }
+
+    .resumo-destaque {
+        align-items: center;
+    }
+
+    .botao-escutar {
+        width: 105px;
+        height: 105px;
+    }
+
+    .secao-faixas {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho-faixas {
+        border-right: 0;
+        border-bottom: 1px solid rgb(255 255 255 / 20%);
+    }
+
+    .conteudo-cabecalho-faixas {
+        position: static;
+    }
+
+    .lista-faixas {
+        padding: 7vw 4vw;
+    }
+
+    .faixa-musical {
+        grid-template-columns: 38px minmax(0, 1fr) auto;
+        min-height: 120px;
+    }
+
+    .faixa-musical h3 {
+        font-size: clamp(25px, 7vw, 43px);
+    }
+
+    .indicador-faixa {
+        display: none;
+    }
+
+    .cabecalho-redes {
+        grid-template-columns: 1fr;
+
+        padding: 14vw 5vw 9vw;
+    }
+
+    .painel-redes {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-rede {
+        min-height: 430px;
+        padding: 9vw 5vw;
+
+        border-right: 0;
+        border-left: 0;
+        border-bottom: 3px solid var(--cor-preto);
+    }
+
+    .cartao-rede::after {
+        font-size: 55vw;
+    }
+
+    .secao-player {
+        grid-template-columns: 1fr;
+    }
+
+    .texto-player {
+        min-height: 520px;
+
+        border-right: 0;
+        border-bottom: 3px solid var(--cor-preto);
+    }
+
+    .embalagem-player {
+        min-height: 590px;
+    }
+
+    .rodape-pagina {
+        grid-template-columns: 1fr;
+
+        justify-items: center;
+        text-align: center;
+    }
+
+    .informacoes-rodape,
+    .informacao-lancamento,
+    .links-plataformas {
+        justify-self: center;
+    }
+
+    .informacoes-rodape {
+        align-items: center;
+    }
+
+    .links-plataformas {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 460px) {
+    .cabecalho-principal {
+        gap: 12px;
+        padding: 14px 4vw;
+    }
+
+    .marca {
+        font-size: 1.35rem;
+    }
+
+    .texto-botao-cores {
+        display: none;
+    }
+
+    .botao-cores {
+        gap: 4px;
+        padding: 7px;
+    }
+
+    .botao-cores::before {
+        width: 17px;
+        height: 17px;
+    }
+
+    .conteudo-destaque {
+        padding: 12vw 5vw 10vw;
+    }
+
+    .titulo-principal {
+        margin-top: 32px;
+
+        font-size: clamp(52px, 17vw, 78px);
+        line-height: 0.74;
+    }
+
+    .palavra-destaque {
+        -webkit-text-stroke: 2px var(--cor-preto);
+
+        text-shadow: 5px 5px 0 var(--cor-ciano);
+
+        transform: translateX(2vw);
+    }
+
+    .assinatura-destaque {
+        margin-top: 24px;
+
+        font-size: 10px;
+        letter-spacing: 0.18em;
+    }
+
+    .resumo-destaque {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+
+        margin-top: 42px;
+    }
+
+    .botao-escutar {
+        align-self: flex-end;
+
+        width: 96px;
+        height: 96px;
+    }
+
+    .area-capa-destaque {
+        min-height: 500px;
+        padding: 12vw 5vw;
+    }
+
+    .moldura-capa {
+        width: min(72vw, 330px);
+        box-shadow: 10px 11px 0 var(--cor-ciano);
+    }
+
+    .circulo-giratorio {
+        width: 92vw;
+    }
+
+    .selo-explicito {
+        top: 16px;
+        left: 14px;
+
+        padding: 6px;
+
+        font-size: 0.5rem;
+    }
+
+    .adesivo-lancamento {
+        right: 10px;
+        bottom: 12px;
+
+        width: 88px;
+        height: 88px;
+        padding: 6px;
+
+        border-width: 2px;
+
+        font-size: 0.5rem;
+    }
+
+    .dado-lancamento {
+        padding: 22px 2vw;
+    }
+
+    .dado-lancamento strong {
+        font-size: clamp(36px, 11vw, 50px);
+    }
+
+    .dado-lancamento > span {
+        display: block;
+
+        margin-top: 6px;
+
+        font-size: 0.55rem;
+        line-height: 1.25;
+        letter-spacing: 0.06em;
+    }
+
+    .faixa-musical {
+        grid-template-columns: 32px minmax(0, 1fr) auto;
+        min-height: 105px;
+    }
+
+    .faixa-musical h3 {
+        font-size: clamp(24px, 8vw, 34px);
+    }
+
+    .faixa-musical time {
+        font-size: 0.625rem;
+    }
+
+    .faixa-musical:hover,
+    .faixa-musical:focus-visible {
+        padding-inline: 10px;
+    }
+
+    .cabecalho-redes h2 {
+        font-size: clamp(56px, 18vw, 76px);
+    }
+
+    .resumo-redes {
+        font-size: 0.6875rem;
+    }
+
+    .cartao-rede {
+        min-height: 390px;
+        padding: 12vw 5vw;
+    }
+
+    .cartao-rede strong {
+        font-size: clamp(58px, 18vw, 82px);
+    }
+
+    .cartao-rede p {
+        font-size: clamp(17px, 5vw, 21px);
+    }
+
+    .cartao-rede::after {
+        font-size: 65vw;
+    }
+
+    .texto-player {
+        min-height: 480px;
+        padding: 14vw 5vw 12vw;
+    }
+
+    .texto-player h2 {
+        font-size: clamp(52px, 17vw, 76px);
+        line-height: 0.74;
+    }
+
+    .texto-player p {
+        font-size: 18px;
+    }
+
+    .link-spotify {
+        padding: 13px 15px;
+        font-size: 0.625rem;
+    }
+
+    .embalagem-player {
+        min-height: 520px;
+        padding: 12vw 5vw;
+    }
+
+    .embalagem-player iframe {
+        height: 400px;
+
+        box-shadow: 10px 11px 0 var(--cor-preto);
+    }
+
+    .rodape-pagina {
+        gap: 18px;
+
+        padding: 24px 5vw;
+
+        font-size: 0.5625rem;
+        letter-spacing: 0.06em;
+    }
+
+    .informacoes-rodape {
+        gap: 4px;
+    }
+
+    .informacao-lancamento {
+        max-width: 260px;
+        line-height: 1.5;
+    }
+
+    .links-plataformas {
+        column-gap: 12px;
+        row-gap: 10px;
+    }
 }

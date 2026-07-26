@@ -19,17 +19,25 @@
 
     <header class="cabecalho-principal">
         <a class="marca" href="#inicio">W4GN3R 0Q<sup>®</sup></a>
-        <nav class="navegacao-principal">
+        <nav class="navegacao-principal" id="navegacao-principal" aria-label="Navegação principal">
             <a href="#disco">O DISCO</a>
             <a href="#faixas">FAIXAS</a>
             <a href="#redes">REDES</a>
             <a href="#ouvir">OUVIR</a>
         </nav>
-        <button class="botao-cores" type="button">
+        <button class="botao-cores" type="button" aria-label="Mudar combinação de cores" title="Mudar combinação de cores">
             <span class="texto-botao-cores">CORES</span>
             <span class="icone-botao-cores" aria-hidden="true">↻</span>
         </button>
-        <button class="botao-mobile" type="button">Menu</button>
+        <button
+                class="botao-mobile"
+                type="button"
+                aria-controls="navegacao-principal"
+                aria-expanded="false"
+                aria-label="Abrir menu"
+        >
+            MENU
+        </button>
     </header>
 
     <main id="inicio">

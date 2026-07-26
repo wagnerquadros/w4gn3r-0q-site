@@ -2,6 +2,9 @@ const botaoCores = document.querySelector(".botao-cores");
 const raizPagina = document.documentElement;
 const areaCapaDestaque = document.querySelector(".area-capa-destaque");
 const molduraCapa = document.querySelector(".moldura-capa");
+const botaoMobile = document.querySelector(".botao-mobile");
+const navegacaoPrincipal = document.querySelector(".navegacao-principal");
+
 
 const coresDoLayout = [
     "var(--cor-acido)",
@@ -85,4 +88,32 @@ areaCapaDestaque.addEventListener("pointermove", (evento) => {
 
 areaCapaDestaque.addEventListener("pointerleave", () => {
     molduraCapa.style.transform = "rotate(4deg)";
+});
+
+botaoMobile.addEventListener("click", () => {
+    const menuEstaAberto  = navegacaoPrincipal.classList.toggle("aberta");
+
+    botaoMobile.setAttribute("aria-expanded", String(menuEstaAberto));
+    botaoMobile.setAttribute("aria-label", menuEstaAberto ? "Fechar menu" : "Abrir menu");
+    botaoMobile.textContent = menuEstaAberto ? "FECHAR" : "MENU";
+});
+
+function fecharMenuMobile() {
+    navegacaoPrincipal.classList.remove("aberta");
+
+    botaoMobile.setAttribute("aria-expanded","false");
+    botaoMobile.setAttribute("aria-label","Abrir menu");
+    botaoMobile.textContent = "MENU";
+}
+
+const linksNavegacao = navegacaoPrincipal.querySelectorAll("a");
+
+linksNavegacao.forEach((link) => {
+    link.addEventListener("click", fecharMenuMobile);
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 800) {
+        fecharMenuMobile();
+    }
 });
