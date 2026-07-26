@@ -858,3 +858,108 @@ body {
     outline: 3px solid var(--cor-preto);
     outline-offset: -6px;
 }
+
+/*=========== Seção Spotify ==================*/
+.secao-player {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    min-height: 720px;
+
+    background-color: var(--fundo-ciano);
+    color: var(--texto-fundo-ciano);
+
+    border-bottom: 3px solid var(--cor-preto);
+}
+
+.texto-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-width: 0;
+
+    padding: 6vw 4vw;
+
+    border-right: 3px solid var(--cor-preto);
+}
+
+.texto-player h2 {
+    margin: 25px 0;
+
+    font-size: clamp(60px, 9vw, 135px);
+    font-weight: 700;
+    line-height: 0.72;
+    letter-spacing: -0.09em;
+}
+
+.texto-player p {
+    max-width: 480px;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.link-spotify {
+    align-self: flex-start;
+
+    display: inline-block;
+
+    padding: 15px 20px;
+
+    background-color: var(--fundo-amarelo);
+    color: var(--texto-fundo-amarelo);
+
+    border: 3px solid var(--cor-preto);
+    box-shadow: 6px 6px 0 var(--cor-preto);
+
+    font-family: monospace;
+    font-size: 0.6875rem;
+    font-weight: 1000;
+    letter-spacing: 0.08em;
+
+    text-decoration: none;
+
+    transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.link-spotify:hover,
+.link-spotify:focus-visible {
+    transform: translate(6px, 6px);
+    box-shadow: 0 0 0 var(--cor-preto);
+}
+
+.link-spotify:focus-visible {
+    outline: 3px solid var(--cor-preto);
+    outline-offset: 4px;
+}
+
+.embalagem-player {
+    display: grid;
+    place-items: center;
+
+    min-width: 0;
+
+    padding: 5vw;
+
+    background-color: var(--fundo-rosa);
+    color: var(--texto-fundo-rosa);
+}
+
+.embalagem-player iframe {
+    display: block;
+
+    background-color: #0b0a0e;
+
+    width: 100%;
+    max-width: 560px;
+    height: 430px;
+
+    border: 3px solid var(--cor-preto);
+    border-radius: 0;
+
+    box-shadow: 16px 17px 0 var(--cor-preto);
+}
