@@ -643,3 +643,53 @@ body {
     outline: 2px solid var(--cor-ciano);
     outline-offset: 3px;
 }
+
+/*=========== Seção Manifesto ==================*/
+.secao-manifesto {
+    position: relative;
+
+    padding: 10vw 4vw;
+
+    background-color: var(--fundo-laranja);
+    color: var(--texto-fundo-laranja);
+
+    overflow: hidden; /*o overflow: hidden da seção recorta as partes do “W4” que ultrapassam seus limites.*/
+}
+
+.secao-manifesto p {
+    position: relative;
+    z-index: 1; /*frase permanece acima do W4*/
+
+    max-width: 1100px;
+
+    font-size: clamp(45px, 8vw, 118px);
+    font-weight: 1000;
+    line-height: 0.92;
+    letter-spacing: -0.065em;
+}
+
+.secao-manifesto em {
+    color: var(--cor-roxo);
+
+    font-style: normal;
+
+    -webkit-text-stroke:
+            1px var(--cor-preto);
+}
+
+.secao-manifesto::after {
+    content: "W4";
+
+    position: absolute;
+    right: -2vw;
+    bottom: -7vw;
+
+    font-size: 38vw;
+    font-weight: 1000;
+    line-height: 0.7;
+    letter-spacing: -0.15em;
+
+    color: rgb(0 0 0 / 5%);
+
+    pointer-events: none;
+}
