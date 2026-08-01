@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores principais */
+  --cor-acido: #e5ff20;
+  --cor-rosa: #ff3c80;
+  --cor-roxo: #3911f3;
+  --cor-ciano: #5cebf1;
+  --cor-laranja: #ff7628;
+
+  /* Cores neutras */
+  --cor-preto: #0b0a0e;
+  --cor-papel: #f5f0e8;
+
+  /* Fundos que participarão do rodízio */
+  --fundo-amarelo: var(--cor-acido);
+  --fundo-laranja: var(--cor-laranja);
+  --fundo-papel: var(--cor-papel);
+  --fundo-ciano: var(--cor-ciano);
+  --fundo-roxo: var(--cor-roxo);
+  --fundo-rosa: var(--cor-rosa);
+
+  /* Textos usados sobre cada fundo */
+  --texto-fundo-amarelo: var(--cor-preto);
+  --texto-fundo-laranja: var(--cor-preto);
+  --texto-fundo-papel: var(--cor-preto);
+  --texto-fundo-ciano: var(--cor-preto);
+  --texto-fundo-roxo: var(--cor-papel);
+  --texto-fundo-rosa: var(--cor-preto);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--fundo-amarelo);
+  color: var(--texto-fundo-amarelo);
+  font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+.faixa-anuncio {
+  background-color: var(--cor-preto);
+  color: var(--cor-papel);
+
+  padding: 10px 0; /*10px = espaço superior e inferior - 0 = espaço esquerdo e direito */
+
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+
+  white-space: nowrap;  /*impede a quebra do texto em linhas*/
+  overflow: hidden; /*esconde o conteudo que ultrapassa a tela*/
+}
+
+.conteudo-faixa {
+  display: flex; /*Coloca os dois <span> lado a lado horizontalmente.*/
+  width: max-content;
+
+  animation: mover-faixa 14s linear infinite;
+}
+
+.conteudo-faixa span {
+  flex: 0 0 auto;  /*Não aumentar para preencher espaço | Não diminuir para caber | Calcular o tamanho com base no próprio conteúdo.*/
+  min-width: 100vw;
+  padding: 0 3rem;
+}
+
+@keyframes mover-faixa {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
